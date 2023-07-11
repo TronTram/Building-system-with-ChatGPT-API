@@ -55,6 +55,17 @@ def main():
     response = get_completion_from_messages(messages)
     print(response)
 
+    user_message = f"""\
+    Tell me more about your flat screen tvs"""
+    messages =  [  
+    {'role':'system', 
+    'content': system_message},    
+    {'role':'user', 
+    'content': f"{delimiter}{user_message}{delimiter}"},  
+    ] 
+    response = get_completion_from_messages(messages)
+    print(response)
+
 def get_completion_from_messages(messages,
                                  model="gpt-3.5-turbo",
                                  temperature=0.0,
